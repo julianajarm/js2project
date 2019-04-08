@@ -11,6 +11,8 @@ var GOODS = [
 ];
 
 function renderGoodsItem(title, price) {
+    title = title || 'good';
+    price = price || '0.00$';
     return '<div class="goods-item"><h3>' +  title + '</h3><p>' + price + '</p></div>';
 }
 
@@ -34,7 +36,7 @@ renderGoodsList(GOODS);
 //     {title: 'Shoes', price: '30.99$'},
 // ];
 //
-// const renderGoodsItem = (title, price) => `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
+// const renderGoodsItem = (title = 'good', price = '0.00$') => `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
 //
 // const renderGoodsList = list => {
 //     const goodsList = list.map (item => renderGoodsItem(item.title, item.price));

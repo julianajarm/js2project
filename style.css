@@ -43,6 +43,19 @@ body {
     border: 1px solid #89857C;
     border-radius: 5px;
 }
+.cart-total {
+    float: right;
+    display: block;
+    background-color: #F3D799;;
+    border: 1px solid #356859;
+    border-radius: 5px;
+    /*height: 50px;*/
+    width: 20%;
+    margin: 30px;
+    margin-right: 50px;
+    text-align: center;
+    padding: 15px;
+}
 
 button {
     height: 50px;

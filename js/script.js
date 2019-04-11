@@ -1,20 +1,52 @@
 "use strict";
 
-const GOODS = [
-    {title: 'Shirt', price: '49.99$'},
-    {title: 'Potato', price: '0.99$'},
-    {title: 'Hat', price: '9.99$'},
-    {title: 'Milk', price: '0.99$'},
-    {title: 'Trousers', price: '29.99$'},
-    {title: 'Shoes', price: '30.99$'},
-];
+class GoodsItem {
+    constructor(title, price) {
+        this.title = title;
+        this.price = price;
+    }
+    render() {
+        return `<div class="goods-item"><h3>${this.title}</h3><p>${this.price}</p></div>`;
+    }
+}
 
-const renderGoodsItem = (title = 'good', price = '0.00$') => `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
+class GoodsList {
+    constructor() {
+        this.goods = [];
+    }
+    fetchGoods() {
+        this.goods = [
+            {title: 'Shirt', price: 150},
+            {title: 'Socks', price: 50},
+            {title: 'Jacket', price: 350},
+            {title: 'Shoes', price: 250},
+        ];
+    }
+    calcTotal () {
+        let total = 0;
+        for ( let i = 0; i < this.goods.length; i++ ) {
+            total += this.goods[i].price;
+        }
+        return total;
+    }
+    render() {
+        let listHtml = '';
+        this.goods.forEach(good => {
+            const goodItem = new GoodsItem(good.title, good.price);
+            listHtml += goodItem.render();
+        });
+        document.querySelector('.goods-list').innerHTML = listHtml;
+        document.querySelector('.cart-total').innerHTML =  `Сумма вашей покупки: ${this.calcTotal()}$`;
 
-const renderGoodsList = list => {
-    const goodsList = list.map (item => renderGoodsItem(item.title, item.price));
+    }
+    addOneMoreItem(){} //добавит кнопку, нажав на которую, можно добавить еще один такой же товар в корзину
+    deleteFromCart(){} //добавит кнопку для удаления товара из корзины
+    clearCart() {} //очистить корзину от товаров
 
-    document.querySelector('.goods-list').innerHTML = goodsList.join('');
-};
+}
 
-renderGoodsList(GOODS);
+const list = new GoodsList();
+list.fetchGoods();
+list.render();
+
+

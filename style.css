@@ -27,9 +27,7 @@ body {
 }
 
 .goods-list {
-    margin: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 20px 50px 20px 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
@@ -43,6 +41,12 @@ body {
     border: 1px solid #89857C;
     border-radius: 5px;
 }
+
+.cart {
+    padding: 10px;
+    border: 1px solid #89857C;
+}
+
 .cart-total {
     float: right;
     display: block;
@@ -68,5 +72,6 @@ button {
     font-size: 1.2em;
     color: #FFFFFF;
 }
+
 
 

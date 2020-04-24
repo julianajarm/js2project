@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="formstyle.css">
+    <script async src="formcode.js"></script>
+    <title>Form Validation</title>
+</head>
+<body>
+<h3>Задание 1-2</h3>
+<p id="text">
+    Narrator: 'Tyler, what the f*** in going on here?'<br>
+    Tyler Durden: 'I ask you for one thing, one simple thing.'<br>
+    Narrator: 'Why do people think that I'm you? Answer me!'<br>
+    Tyler 'Durden: Sit.'<br>
+    Narrator: 'Now answer me, why do people think that I'm you.'<br>
+    Tyler Durden: 'I think you know.'<br>
+    Narrator: 'No, I don't.'<br>
+    Tyler Durden: 'Yes, you do. Why would anyone possibly confuse you with me?'<br>
+    Narrator: 'Uh... I... I don't know.'<br>
+    Tyler Durden: 'You got it.'<br>
+    Narrator: 'No.'<br>
+    Tyler Durden: 'Say it.'<br>
+    Narrator: 'Because...'<br>
+    Tyler Durden: 'Say it.'<br>
+    Narrator: 'Because we're the same person.'<br>
+    Tyler Durden: 'That's right.'<br>
+</p>
+<button onclick="changeQuotes()">GO</button>
+
+<h3>Задание 3</h3>
+<form action="#" method="post" class="feedback" id="feedbackForm">
+    <div>
+        <div class="errorMsg nameErr">Имя должно содержать только буквы.</div>
+        <label><input type="text" name="name" id="name" placeholder="Name" oninput="checkName(this)"></label>
+    </div>
+    <div>
+        <div class="errorMsg phoneErr">Номер телефона должен иметь вид +7(000)000-0000.</div>
+        <label><input type="text" name="phone" id="phone" placeholder="Phone number" oninput="checkPhone(this)"></label>
+    </div>
+    <div>
+        <div class="errorMsg emailErr">Некорректный email.</div>
+        <label><input type="email" name="email" id="email" placeholder="Email" oninput="checkEmail(this)"></label>
+    </div>
+    <div>
+        <label><textarea name="textarea" id="message" cols="30" rows="10" placeholder="Enter message"></textarea></label>
+    </div>
+    <button id="sendBtn">Send</button>
+</form>
+</body>
+</html>
